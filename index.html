@@ -22,6 +22,8 @@
             <div class="nav-links">
                 <a href="#framework" class="nav-link">Statutory Framework</a>
                 <a href="#process" class="nav-link">Transaction Process</a>
+                <a href="#licensing" class="nav-link">Licensing</a>
+                <a href="#simulator" class="nav-link">Simulator</a>
             </div>
         </div>
     </nav>
@@ -165,6 +167,115 @@
                         <div class="step-content">
                             <h4>Legitimate Release</h4>
                             <p>Upon buyer approval and satisfaction, funds are released to the seller, completing the contractual loop.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Licensing & Regulatory Details -->
+        <section id="licensing" class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Licensing & Platform Operations</h2>
+                    <p>The regulatory and operational licenses required to run a legally compliant escrow in Kenya.</p>
+                </div>
+                
+                <div class="cards-grid">
+                    <article class="card fade-in">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">Regulatory Compliance</div>
+                            <h3>CBK Payment Service Provider</h3>
+                            <p>To hold user funds, escrow services must be partnered with or licensed by the Central Bank of Kenya (CBK) as a Payment Service Provider (PSP). Funga-Deal ensures all financial routing happens via licensed banking or mobile money APIs (such as M-PESA).</p>
+                        </div>
+                    </article>
+                    
+                    <article class="card fade-in">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">Platform Usage</div>
+                            <h3>End-User License Agreement</h3>
+                            <p>Users are granted a revocable, non-exclusive license to use the platform. The Terms of Service strictly prohibit illicit trades, and Funga-Deal retains the right to freeze accounts involved in breaches of Kenyan commercial law.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="card fade-in">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">Digital Assets</div>
+                            <h3>Intellectual Property (IP) Transfer</h3>
+                            <p>For transactions involving digital goods, Funga-Deal enforces the legal transfer of IP. The buyer only receives the full commercial license to the asset once the escrow funds are irrevocably cleared and released to the seller.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulator Section -->
+        <section id="simulator" class="section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Interactive Escrow Simulator</h2>
+                    <p>Experience the Funga-Deal transaction flow of safely securing and releasing funds.</p>
+                </div>
+                <div class="sim-wrapper fade-in">
+                    <div class="sim-status" id="simStatus">Stage 1: Awaiting Agreement</div>
+                    <div class="sim-layout">
+                        <!-- Left: Entities -->
+                        <div class="sim-board sim-board-vertical">
+                            <div class="sim-entity" id="entityBuyer">
+                                <div class="entity-name">Buyer</div>
+                                <div class="entity-balance" id="buyerBalance">KES 10,000</div>
+                            </div>
+                            <div class="sim-entity border-accent" id="entityEscrow">
+                                <div class="entity-name">Funga-Deal Escrow Vault</div>
+                                <div class="entity-balance" id="escrowBalance">KES 0</div>
+                            </div>
+                            <div class="sim-entity" id="entitySeller">
+                                <div class="entity-name">Seller</div>
+                                <div class="entity-balance" id="sellerBalance">KES 0</div>
+                            </div>
+                            <div class="sim-entity border-warning" id="entityMod" style="display: none;">
+                                <div class="entity-name">Funga-Deal Moderator</div>
+                                <div class="entity-balance text-warning">Reviewing Evidence</div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Chat & Controls -->
+                        <div class="sim-sidebar">
+                            <div class="sim-chat-box">
+                                <div class="chat-header">Transaction Chat</div>
+                                <div class="chat-messages" id="chatMessages">
+                                    <div class="chat-msg system">Waiting for users to connect...</div>
+                                </div>
+                            </div>
+                            
+                            <div class="sim-controls">
+                                <button class="btn btn-primary btn-block" id="btnAgree">Agree & Deposit Funds</button>
+                                
+                                <div class="btn-group" id="fulfillmentBtns" style="display: none;">
+                                    <button class="btn btn-primary" id="btnDeliver">Seller: Deliver Service</button>
+                                </div>
+                                
+                                <div class="btn-group" id="approvalBtns" style="display: none;">
+                                    <button class="btn btn-success" id="btnApprove">Buyer: Approve</button>
+                                    <button class="btn btn-danger" id="btnDispute">Buyer: Dispute</button>
+                                </div>
+                                
+                                <div class="btn-group" id="modBtns" style="display: none; flex-direction: column; gap: 8px;">
+                                    <button class="btn btn-warning btn-block" id="btnModSeller">Mod: Rule for Seller (Release)</button>
+                                    <button class="btn btn-danger btn-block" id="btnModBuyer">Mod: Rule for Buyer (Refund)</button>
+                                </div>
+                                
+                                <button class="btn btn-secondary btn-block mt-2" id="simResetBtn" style="display:none;">Reset Simulator</button>
+                            </div>
                         </div>
                     </div>
                 </div>

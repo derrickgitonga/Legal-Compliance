@@ -3,297 +3,479 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funga-Deal | Legal Framework</title>
-    <meta name="description" content="The legal foundation of Funga-Deal's digital escrow in Kenya.">
-    <!-- Using a single, clean sans-serif font for a professional look -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Trustlink | Secure Escrow Payments</title>
+    <meta name="description" content="Trustlink is the PayPal of secure deals in Africa. The most reliable escrow platform to buy and sell safely.">
+    <!-- Using Outfit for a premium SaaS feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Professional Navigation -->
+    <!-- Global Navigation -->
     <nav class="navbar">
         <div class="container nav-content">
-            <div class="logo">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="logo-icon">
+            <div class="logo nav-action" data-target="view-landing" style="cursor:pointer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--brand-accent)" stroke-width="2.5" class="logo-icon">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="M9 12l2 2 4-4"></path>
                 </svg>
-                Funga-Deal
+                Trustlink
             </div>
+            
             <div class="nav-links">
-                <a href="#framework" class="nav-link">Statutory Framework</a>
-                <a href="#process" class="nav-link">Transaction Process</a>
-                <a href="#licensing" class="nav-link">Licensing</a>
-                <a href="#simulator" class="nav-link">Simulator</a>
+                <a class="nav-link nav-action active" data-target="view-landing">Home</a>
+                <a class="nav-link nav-action" data-target="view-buyer">Buyer Dashboard</a>
+                <a class="nav-link nav-action" data-target="view-merchant">Merchant Dashboard</a>
+                <!-- We will keep the Admin view for the dashboard feeling -->
+                <a class="nav-link nav-action" data-target="view-admin">Admin Panel</a>
             </div>
         </div>
     </nav>
 
-    <!-- Clean, split-layout Hero Section -->
-    <header class="hero">
-        <div class="container hero-grid">
-            <div class="hero-text">
-                <div class="tag">Kenya Legal Compliance</div>
-                <h1>Digital Escrow Built on Statutory Law</h1>
-                <p>Funga-Deal bridges the trust gap in online marketplaces. Our platform aligns perfectly with Kenyan legislation to establish 100% enforceable, dispute-free transactions.</p>
-                <div class="button-group">
-                    <a href="#framework" class="btn btn-primary">Review Framework</a>
-                    <a href="#process" class="btn btn-secondary">See How It Works</a>
-                </div>
-            </div>
+    <div id="app-container">
+
+        <!-- ======================= -->
+        <!-- VIEW: LANDING PAGE      -->
+        <!-- ======================= -->
+        <main class="view active" id="view-landing">
             
-            <div class="hero-visual">
-                <div class="bento-box">
-                    <div class="bento-header">
-                        <h3>Compliance Verification</h3>
-                        <span class="status-badge"><span class="dot pulse"></span> Active Protection</span>
+            <!-- Hero Section -->
+            <header class="hero">
+                <div class="container hero-grid">
+                    <div class="hero-text fade-in">
+                        <div class="tag">Secure Escrow Platform</div>
+                        <h1>Buy & Sell Online with <span class="text-accent">Zero Risk</span></h1>
+                        <p>The "PayPal of secure deals" in Africa and beyond. Trustlink holds the buyer's money until the product or service is successfully delivered. Scammers are stopped at the door.</p>
+                        <div class="button-group">
+                            <button class="btn btn-primary nav-action" data-target="view-merchant">Start Selling Safely</button>
+                            <button class="btn btn-secondary glass" onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">How Escrow Works</button>
+                        </div>
                     </div>
-                    <ul class="verification-list">
-                        <li>
-                            <svg viewBox="0 0 24 24" class="check-icon" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <div>
-                                <strong>Contract Enforcement</strong>
-                                <span>Law of Contract Act (Cap 23)</span>
+                    <div class="hero-visual fade-in">
+                        <div class="glass-card hero-mock">
+                            <div class="mock-header">
+                                <img src="https://ui-avatars.com/api/?name=Buyer&background=e0e7ff&color=4f46e5" class="avatar" alt="Buyer">
+                                <div class="mock-meta">
+                                    <strong>KES 25,000 Payment</strong>
+                                    <span>Status: <span class="badge badge-warning">Held in Escrow</span></span>
+                                </div>
                             </div>
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" class="check-icon" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <div>
-                                <strong>Electronic Signatures</strong>
-                                <span>KICA Act Validated</span>
+                            <div class="mock-body">
+                                <p>Awaiting seller delivery via <strong>Sendy</strong>. Funds will be released only upon your approval.</p>
                             </div>
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" class="check-icon" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <div>
-                                <strong>Consumer Shield</strong>
-                                <span>Act No. 46 of 2012</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <!-- Grid layout for legal pillars -->
-        <section id="framework" class="section bg-light">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Statutory Framework</h2>
-                    <p>Digital escrow operates under a robust web of commercial laws protecting both buyers and sellers.</p>
-                </div>
-
-                <div class="cards-grid">
-                    <article class="card fade-in">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                         </div>
-                        <div class="card-content">
-                            <div class="card-meta">Chapter 23, Laws of Kenya</div>
-                            <h3>Law of Contract Act</h3>
-                            <p>Milestones and terms initiated on Funga-Deal form legally binding contracts. Contractual obligations must be fulfilled exactly as agreed before any funds are released.</p>
-                        </div>
-                    </article>
-
-                    <article class="card fade-in">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-meta">Act No. 2 of 1998</div>
-                            <h3>Kenya Information & Communications Act</h3>
-                            <p>KICA validates electronic records and digital signatures. A digital agreement on Funga-Deal holds the exact same evidentiary weight as a physical signature in a Kenyan court.</p>
-                        </div>
-                    </article>
-
-                    <article class="card fade-in">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-meta">Act No. 46 of 2012</div>
-                            <h3>Consumer Protection Act</h3>
-                            <p>This Act shields consumers from fraudulent vendors. By utilizing the escrow model, buyers are guaranteed not to pay for defective goods or undelivering merchants.</p>
-                        </div>
-                    </article>
-
-                    <article class="card fade-in">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-meta">Act No. 24 of 2019</div>
-                            <h3>Data Protection Act</h3>
-                            <p>All PII (Personally Identifiable Information) and transaction data are processed strictly per the law. Funga-Deal ensures localized, encrypted, and transparent data handling.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Professional timeline for transaction process -->
-        <section id="process" class="section">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2>How Transactions are Secured</h2>
-                    <p>The structured workflow that enforces trust.</p>
-                </div>
-
-                <div class="timeline">
-                    <div class="timeline-step fade-in">
-                        <div class="step-indicator">01</div>
-                        <div class="step-content">
-                            <h4>Digital Agreement</h4>
-                            <p>Parties agree to terms digitally. This step instantly forms a binding contract recognized under KICA.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-step fade-in">
-                        <div class="step-indicator">02</div>
-                        <div class="step-content">
-                            <h4>Escrow Funding</h4>
-                            <p>Buyer deposits funds. The money is secured in a designated escrow account, held by a CBK-regulated partner.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-step fade-in">
-                        <div class="step-indicator">03</div>
-                        <div class="step-content">
-                            <h4>Service Delivery</h4>
-                            <p>Seller delivers the agreed-upon goods or services. Milestones are tracked and verified transparently.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-step fade-in">
-                        <div class="step-indicator">04</div>
-                        <div class="step-content">
-                            <h4>Legitimate Release</h4>
-                            <p>Upon buyer approval and satisfaction, funds are released to the seller, completing the contractual loop.</p>
+                        <div class="glass-card hero-mock float-mock">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="var(--brand-success)" stroke-width="2" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            <span>Identity Verified (KYC)</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </header>
 
-        <!-- Platform Licensing & Regulatory Details -->
-        <section id="licensing" class="section bg-light">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Licensing & Platform Operations</h2>
-                    <p>The regulatory and operational licenses required to run a legally compliant escrow in Kenya.</p>
+            <!-- How It Works Section -->
+            <section id="how-it-works" class="section bg-alt">
+                <div class="container">
+                    <div class="section-header text-center fade-in">
+                        <h2>The Escrow Process</h2>
+                        <p>Complete peace of mind for both Kenyans and global users.</p>
+                    </div>
+                    <div class="steps-grid">
+                        <div class="step-card fade-in">
+                            <div class="step-number">1</div>
+                            <h3>Buyer Pays</h3>
+                            <p>Buyer deposits funds securely via M-Pesa, Card, or Crypto.</p>
+                        </div>
+                        <div class="step-card fade-in" style="transition-delay:0.1s">
+                            <div class="step-number">2</div>
+                            <h3>Platform Holds</h3>
+                            <p>Trustlink secures the funds in an escrow vault.</p>
+                        </div>
+                        <div class="step-card fade-in" style="transition-delay:0.2s">
+                            <div class="step-number">3</div>
+                            <h3>Seller Delivers</h3>
+                            <p>Product is shipped or service is performed.</p>
+                        </div>
+                        <div class="step-card fade-in" style="transition-delay:0.3s">
+                            <div class="step-number">4</div>
+                            <h3>Buyer Approves</h3>
+                            <p>Buyer receives and verifies the delivery.</p>
+                        </div>
+                        <div class="step-card fade-in" style="transition-delay:0.4s">
+                            <div class="step-number">5</div>
+                            <h3>Funds Released</h3>
+                            <p>Trustlink releases money to the seller instantly.</p>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="cards-grid">
-                    <article class="card fade-in">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-meta">Regulatory Compliance</div>
-                            <h3>CBK Payment Service Provider</h3>
-                            <p>To hold user funds, escrow services must be partnered with or licensed by the Central Bank of Kenya (CBK) as a Payment Service Provider (PSP). Funga-Deal ensures all financial routing happens via licensed banking or mobile money APIs (such as M-PESA).</p>
-                        </div>
-                    </article>
-                    
-                    <article class="card fade-in">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-meta">Platform Usage</div>
-                            <h3>End-User License Agreement</h3>
-                            <p>Users are granted a revocable, non-exclusive license to use the platform. The Terms of Service strictly prohibit illicit trades, and Funga-Deal retains the right to freeze accounts involved in breaches of Kenyan commercial law.</p>
-                        </div>
-                    </article>
-                    
-                    <article class="card fade-in">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-meta">Digital Assets</div>
-                            <h3>Intellectual Property (IP) Transfer</h3>
-                            <p>For transactions involving digital goods, Funga-Deal enforces the legal transfer of IP. The buyer only receives the full commercial license to the asset once the escrow funds are irrevocably cleared and released to the seller.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Simulator Section -->
-        <section id="simulator" class="section">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2>Interactive Escrow Simulator</h2>
-                    <p>Experience the Funga-Deal transaction flow of safely securing and releasing funds.</p>
+            <!-- Two Button Types Section -->
+            <section class="section">
+                <div class="container">
+                    <div class="split-feature-grid">
+                        <div class="feature-column fade-in">
+                            <div class="icon-wrap service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            </div>
+                            <h2>Service Agreements</h2>
+                            <p>Freelancers, designers, and developers can create links to be paid in <strong>milestones</strong>, half payments, or upon full completion of the work.</p>
+                            <button class="btn btn-secondary nav-action" data-target="view-merchant">Create Service Link</button>
+                        </div>
+                        
+                        <div class="feature-divider"></div>
+
+                        <div class="feature-column fade-in">
+                            <div class="icon-wrap product-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                            </div>
+                            <h2>Physical Products</h2>
+                            <p>Upload images, set the price, and choose from our natively integrated couriers like <strong>Sendy, DHL, and G4S</strong>. Send the link directly via WhatsApp.</p>
+                            <button class="btn btn-secondary nav-action" data-target="view-merchant">Upload Product</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="sim-wrapper fade-in">
-                    <div class="sim-status" id="simStatus">Stage 1: Awaiting Agreement</div>
-                    <div class="sim-layout">
-                        <!-- Left: Entities -->
-                        <div class="sim-board sim-board-vertical">
-                            <div class="sim-entity" id="entityBuyer">
-                                <div class="entity-name">Buyer</div>
-                                <div class="entity-balance" id="buyerBalance">KES 10,000</div>
+            </section>
+
+            <!-- Interactive Simulator -->
+            <section id="simulator" class="section bg-alt" style="padding-top: 64px;">
+                <div class="container">
+                    <div class="section-header text-center fade-in">
+                        <h2>Interactive Escrow Simulator</h2>
+                        <p>Experience how we safely secure and release funds during a real transaction.</p>
+                    </div>
+
+                    <div class="tx-header flex-between mb-8 fade-in">
+                        <div>
+                            <h3>Transaction #TRX-9482A</h3>
+                            <p>iPhone 14 Pro Max &middot; KES 150,000</p>
+                        </div>
+                        <span class="badge badge-lg badge-warning" id="simStatus">Stage 1: Awaiting Agreement</span>
+                    </div>
+
+                    <div class="sim-layout fade-in">
+                        <!-- Left: Entities & Tracking -->
+                        <div class="sim-board-vertical glass-panel">
+                            <div class="tx-tracking">
+                                <h3>Courier Tracking Information</h3>
+                                <div class="tracking-banner">
+                                    <strong>Courier:</strong> Sendy &middot; <strong>Tracking ID:</strong> SNDY-884-XQ
+                                    <br>
+                                    <span class="text-sm">Status: In Transit to drop-off point.</span>
+                                </div>
                             </div>
-                            <div class="sim-entity border-accent" id="entityEscrow">
-                                <div class="entity-name">Funga-Deal Escrow Vault</div>
-                                <div class="entity-balance" id="escrowBalance">KES 0</div>
+
+                            <div class="divider mt-4 mb-4"></div>
+
+                            <h3>Financial Overview</h3>
+                            <div class="sim-entity bg-alt" id="entityBuyer">
+                                <div class="entity-name">Buyer (Jane Doe)</div>
+                                <div class="entity-balance" id="buyerBalance">KES 150,000</div>
                             </div>
-                            <div class="sim-entity" id="entitySeller">
-                                <div class="entity-name">Seller</div>
+                            
+                            <div class="sim-entity border-accent shadow" id="entityEscrow">
+                                <div class="entity-name">Trustlink Vault</div>
+                                <div class="entity-balance text-accent" id="escrowBalance">KES 0</div>
+                            </div>
+                            
+                            <div class="sim-entity bg-alt" id="entitySeller">
+                                <div class="entity-name">Seller (Gadget Store KE)</div>
                                 <div class="entity-balance" id="sellerBalance">KES 0</div>
                             </div>
-                            <div class="sim-entity border-warning" id="entityMod" style="display: none;">
-                                <div class="entity-name">Funga-Deal Moderator</div>
-                                <div class="entity-balance text-warning">Reviewing Evidence</div>
+                            
+                            <div class="sim-entity border-danger text-center" id="entityMod" style="display: none;">
+                                <div class="entity-name text-danger font-bold">Admin Resolution Panel</div>
                             </div>
                         </div>
 
-                        <!-- Right: Chat & Controls -->
-                        <div class="sim-sidebar">
+                        <!-- Right: Chat & Actions -->
+                        <div class="sim-sidebar glass-panel">
                             <div class="sim-chat-box">
-                                <div class="chat-header">Transaction Chat</div>
+                                <div class="chat-header flex-between">
+                                    Transaction Chat <span class="badge">E2E Encrypted</span>
+                                </div>
                                 <div class="chat-messages" id="chatMessages">
-                                    <div class="chat-msg system">Waiting for users to connect...</div>
+                                    <div class="chat-msg system">Escrow created by Gadget Store KE. Awaiting Buyer funds.</div>
+                                </div>
+                                <div class="chat-input-area">
+                                    <input type="text" placeholder="Send a message, attachment..." disabled>
+                                    <button class="btn btn-sm btn-primary" disabled>Send</button>
                                 </div>
                             </div>
                             
-                            <div class="sim-controls">
-                                <button class="btn btn-primary btn-block" id="btnAgree">Agree & Deposit Funds</button>
+                            <!-- Interactive Simulator Controls -->
+                            <div class="sim-controls mt-4 bg-alt p-4 rounded">
+                                <p class="text-xs font-bold mb-2">SIMULATOR CONTROLS</p>
+                                <button class="btn btn-primary btn-block mb-2" id="btnAgree">Buyer: Deposit KES 150,000</button>
                                 
                                 <div class="btn-group" id="fulfillmentBtns" style="display: none;">
-                                    <button class="btn btn-primary" id="btnDeliver">Seller: Deliver Service</button>
+                                    <button class="btn btn-primary btn-block" id="btnDeliver">Seller: Mark Shipped</button>
                                 </div>
                                 
                                 <div class="btn-group" id="approvalBtns" style="display: none;">
-                                    <button class="btn btn-success" id="btnApprove">Buyer: Approve</button>
-                                    <button class="btn btn-danger" id="btnDispute">Buyer: Dispute</button>
+                                    <button class="btn btn-success" id="btnApprove">Buyer: Approve Delivery</button>
+                                    <button class="btn btn-danger" id="btnDispute">Buyer: Open Dispute</button>
                                 </div>
                                 
                                 <div class="btn-group" id="modBtns" style="display: none; flex-direction: column; gap: 8px;">
-                                    <button class="btn btn-warning btn-block" id="btnModSeller">Mod: Rule for Seller (Release)</button>
-                                    <button class="btn btn-danger btn-block" id="btnModBuyer">Mod: Rule for Buyer (Refund)</button>
+                                    <button class="btn btn-warning btn-block" id="btnModSeller">Admin: Release to Seller</button>
+                                    <button class="btn btn-danger btn-block" id="btnModBuyer">Admin: Refund Buyer</button>
                                 </div>
                                 
-                                <button class="btn btn-secondary btn-block mt-2" id="simResetBtn" style="display:none;">Reset Simulator</button>
+                                <button class="btn btn-secondary btn-block mt-4" id="simResetBtn" style="display:none;">Restart Simulation</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-block">
-                <strong>Funga-Deal</strong>
-                <p>Establishing Trust in Kenya's Digital Economy.</p>
+            <!-- Legal and Licensing Framework -->
+            <section id="licensing" class="section">
+                <div class="container">
+                    <div class="section-header text-center fade-in">
+                        <h2>Built on Statutory Law & Regulatory Licenses</h2>
+                        <p>Our escrow model is 100% compliant with Kenyan commercial and data legislation.</p>
+                    </div>
+
+                    <div class="grid-2 fade-in" style="margin-bottom: 64px;">
+                        
+                        <article class="glass-card">
+                            <div class="icon-wrap service-icon mt-2 mb-4" style="width:48px;height:48px;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                            </div>
+                            <div class="badge badge-warning mb-2">Chapter 23, Laws of Kenya</div>
+                            <h3>Law of Contract Act</h3>
+                            <p>Milestones and terms initiated on Trustlink form legally binding contracts. Contractual obligations must be fulfilled exactly as agreed before any funds are released.</p>
+                        </article>
+
+                        <article class="glass-card">
+                            <div class="icon-wrap service-icon mt-2 mb-4" style="width:48px;height:48px;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            </div>
+                            <div class="badge badge-warning mb-2">Act No. 2 of 1998</div>
+                            <h3>Kenya Information & Communications Act</h3>
+                            <p>KICA validates electronic records and digital signatures. A digital agreement on Trustlink holds the exact same evidentiary weight as a physical signature in a Kenyan court.</p>
+                        </article>
+
+                        <article class="glass-card">
+                            <div class="icon-wrap service-icon mt-2 mb-4" style="width:48px;height:48px;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <div class="badge badge-warning mb-2">Act No. 46 of 2012</div>
+                            <h3>Consumer Protection Act</h3>
+                            <p>This Act shields consumers from fraudulent vendors. By utilizing the escrow model, buyers are guaranteed not to pay for defective goods or undelivering merchants.</p>
+                        </article>
+
+                        <article class="glass-card">
+                            <div class="icon-wrap service-icon mt-2 mb-4" style="width:48px;height:48px;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                            </div>
+                            <div class="badge badge-success mb-2">Regulatory Compliance</div>
+                            <h3>CBK Payment Service Provider</h3>
+                            <p>To hold user funds legally, escrow services securely route money via Central Bank of Kenya (CBK) licensed Payment Service Providers (like M-PESA & banking gateways).</p>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Payment & Security -->
+            <section class="section bg-alt p-8" style="padding-top: 32px; padding-bottom: 32px">
+                <div class="container text-center fade-in">
+                    <h3>Integrated Payment Partners & Couriers</h3>
+                    <div class="partner-logos mt-4">
+                        <div class="partner">M-PESA</div>
+                        <div class="partner">VISA</div>
+                        <div class="partner">MASTERCARD</div>
+                        <div class="partner">DHL</div>
+                        <div class="partner">SENDY</div>
+                        <div class="partner">G4S</div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+
+        <!-- ======================= -->
+        <!-- VIEW: BUYER DASHBOARD   -->
+        <!-- ======================= -->
+        <main class="view" id="view-buyer">
+            <div class="dashboard container">
+                <!-- Sidebar -->
+                <aside class="dash-sidebar">
+                    <div class="profile-card">
+                        <img src="https://ui-avatars.com/api/?name=Jane+Doe&background=e0e7ff&color=4f46e5" alt="User">
+                        <h4>Jane Doe (Buyer)</h4>
+                        <span class="badge badge-success">ID Verified</span>
+                    </div>
+                    <nav class="dash-nav mt-4">
+                        <a href="#" class="active">Active Deals</a>
+                        <a href="#">Transactions</a>
+                        <a href="#">Disputes</a>
+                        <a href="#">Settings</a>
+                    </nav>
+                </aside>
+
+                <!-- Content -->
+                <section class="dash-content">
+                    <div class="dash-header">
+                        <h2>Dashboard</h2>
+                        <div class="balance-card">
+                            <span class="label">Escrow Balance</span>
+                            <span class="amount">KES 150,000</span>
+                        </div>
+                    </div>
+
+                    <div class="table-container mt-8 fade-in">
+                        <h3>Active Deals</h3>
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Item/Service</th>
+                                    <th>Seller</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>iPhone 14 Pro Max</td>
+                                    <td>Gadget Store KE</td>
+                                    <td>KES 150,000</td>
+                                    <td><span class="badge badge-warning">Awaiting Delivery</span></td>
+                                    <td><button class="btn btn-sm btn-primary" onclick="alert('Proceeding to Escrow Chat')">Open Hub</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Website Landing Page</td>
+                                    <td>Code Ninja</td>
+                                    <td>KES 45,000</td>
+                                    <td><span class="badge badge-success">Milestone 1 Approved</span></td>
+                                    <td><button class="btn btn-sm btn-secondary" onclick="alert('Proceeding to Escrow Chat')">View Hub</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
             </div>
-            <div class="footer-links">
-                <p>&copy; 2026 Funga-Deal Legal Framework.</p>
+        </main>
+
+        <!-- ======================= -->
+        <!-- VIEW: MERCHANT DASHB.   -->
+        <!-- ======================= -->
+        <main class="view" id="view-merchant">
+            <div class="dashboard container">
+                <aside class="dash-sidebar">
+                    <div class="profile-card">
+                        <img src="https://ui-avatars.com/api/?name=Gadget+Store&background=10b981&color=fff" alt="User">
+                        <h4>Gadget Store (Seller)</h4>
+                        <span class="badge badge-success">KYC Verified</span>
+                    </div>
+                    <nav class="dash-nav mt-4">
+                        <a href="#" class="active">Overview</a>
+                        <a href="#">Generate Payment Link</a>
+                        <a href="#">Refunds</a>
+                        <a href="#">API Keys (Web Integration)</a>
+                    </nav>
+                </aside>
+
+                <section class="dash-content">
+                    <div class="dash-header">
+                        <h2>Merchant Hub</h2>
+                        <div class="btn-group">
+                            <button class="btn btn-primary" onclick="alert('Mock: Service Form Opened')">Create Service Link</button>
+                            <button class="btn btn-secondary" onclick="alert('Mock: Product Form Opened')">Upload Product</button>
+                        </div>
+                    </div>
+
+                    <div class="grid-2 mt-8 fade-in">
+                        <div class="glass-card pd-6">
+                            <h3>Analytics</h3>
+                            <div class="stat-group mt-4">
+                                <div class="stat">
+                                    <span>Total Held in Escrow</span>
+                                    <h4>KES 320,000</h4>
+                                </div>
+                                <div class="stat mt-4">
+                                    <span>Successfully Released</span>
+                                    <h4>KES 1,450,000</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card pd-6">
+                            <h3>Auto-Courier Integration</h3>
+                            <p class="mt-2 text-sm text-dim">Enable automatic tracking updates so funds are released exactly when G4S/Sendy marks items as delivered.</p>
+                            <img src="https://placehold.co/400x120/1f2937/fff?text=Courier+API+Status:+Connected" class="mt-4" style="width: 100%; border-radius: 8px;">
+                        </div>
+                    </div>
+                </section>
             </div>
-        </div>
-    </footer>
+        </main>
+
+        <!-- ======================= -->
+        <!-- VIEW: ADMIN DASHBOARD   -->
+        <!-- ======================= -->
+        <main class="view" id="view-admin">
+            <div class="dashboard container">
+                <aside class="dash-sidebar bg-dark">
+                    <div class="profile-card dark mb-4">
+                        <h4 class="text-white">Admin Secure Portal</h4>
+                    </div>
+                    <nav class="dash-nav dark mt-4">
+                        <a href="#" class="active">Dispute Resolution (1)</a>
+                        <a href="#">KYC Verification Queue (5)</a>
+                        <a href="#">Transactions</a>
+                        <a href="#">Escrow Vault Management</a>
+                        <a href="#">API Integrations (Sendy)</a>
+                    </nav>
+                </aside>
+
+                <section class="dash-content">
+                    <div class="dash-header">
+                        <h2>Admin Command Center</h2>
+                    </div>
+
+                    <div class="glass-card mt-8 fade-in border-danger" style="border-left: 4px solid #ef4444;">
+                        <h3 class="text-danger flex-align gap-2">
+                            <svg viewBox="0 0 24 24" width="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            Active Dispute Requires Review
+                        </h3>
+                        <p class="mt-2 font-bold">TRX-741 (Web Development Service)</p>
+                        <p class="text-sm mt-1">Buyer claims code was not delivered. Seller claims milestones were met and deployed to production.</p>
+                        
+                        <div class="action-bar mt-4 flex gap-4">
+                            <button class="btn btn-primary btn-sm">Review Chat Logs</button>
+                            <button class="btn btn-secondary btn-sm">Review GitHub Commits (Proof)</button>
+                            <button class="btn btn-danger btn-sm">Make Final Decision</button>
+                        </div>
+                    </div>
+
+                    <div class="table-container mt-8 fade-in">
+                        <h3>Pending KYC Approvals</h3>
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>ID Card</th>
+                                    <th>Selfie Match</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>David Kimani</td>
+                                    <td><span class="badge badge-success">Valid ID</span></td>
+                                    <td><span class="badge badge-warning">Reviewing</span></td>
+                                    <td><button class="btn btn-sm btn-primary">Verify Docs</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+    </div> <!-- End App Container -->
 
     <script src="script.js"></script>
 </body>
